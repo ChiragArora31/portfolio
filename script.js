@@ -1,7 +1,6 @@
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 const scrollProgress = document.getElementById('scrollProgress');
-const ageCounter = document.getElementById('ageCounter');
 
 const savedTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', savedTheme);
@@ -38,23 +37,8 @@ function updateScrollProgress() {
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const percentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
 
-    scrollProgress.style.width = `${Math.min(percentage, 100)}%`;
+    scrollProgress.value = Math.min(percentage, 100);
 }
 
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 updateScrollProgress();
-
-function updateAgeCounter() {
-    if (!ageCounter) {
-        return;
-    }
-
-    const birthDate = new Date(ageCounter.dataset.birthdate);
-    const now = new Date();
-    const years = (now - birthDate) / (1000 * 60 * 60 * 24 * 365.2425);
-
-    ageCounter.textContent = years.toFixed(9);
-}
-
-updateAgeCounter();
-setInterval(updateAgeCounter, 100);

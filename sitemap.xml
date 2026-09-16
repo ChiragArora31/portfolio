@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.chiragarora.tech/</loc>
+        <lastmod>2026-09-16</lastmod>
     </url>
     <url>
         <loc>https://www.chiragarora.tech/writing</loc>
+        <lastmod>2026-09-16</lastmod>
     </url>
     <url>
         <loc>https://www.chiragarora.tech/collection</loc>
+        <lastmod>2026-09-16</lastmod>
     </url>
 </urlset>

@@ -30,16 +30,17 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Reading progress"></div>
+    <progress class="scroll-progress" id="scrollProgress" max="100" value="0" aria-label="Reading progress"></progress>
 
     <header class="site-header">
         <nav class="nav" aria-label="Primary navigation">
             <a href="/">home</a>
-            <a href="/#projects">projects</a>
+            <a href="/#work">work</a>
+            <a href="/#open-source">open source</a>
             <a href="/writing" aria-current="page">writing</a>
             <a href="/collection">collection</a>
             <a href="/#contact">contact</a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
                 <span class="theme-label">theme</span>
             </button>
         </nav>
@@ -86,7 +87,7 @@ const usefulExample = true;</code></pre>
                 <p>Write about what did not work, what surprised you, and which compromise you accepted. This is usually the most credible part of a technical essay.</p>
 
                 <blockquote>
-                    <p>Use callouts sparingly—for the sentence that should survive after the implementation details fade.</p>
+                    <p>Use callouts sparingly, for the sentence that should survive after the implementation details fade.</p>
                 </blockquote>
 
                 <h2 id="takeaways">what i learned.</h2>

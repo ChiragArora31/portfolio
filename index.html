@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chirag Arora - Software Engineer building AI products, retrieval systems, and developer tools.">
+    <meta name="description" content="Chirag Arora is an AI-focused software engineer building reliable agent systems, retrieval infrastructure, developer tools, and production software.">
     <meta name="author" content="Chirag Arora">
     <meta name="theme-color" content="#ffffff">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Chirag Arora - AI Software Engineer">
-    <meta property="og:description" content="A proof-of-work portfolio across LLM products, vector search, realtime systems, and open source agent orchestration.">
+    <meta property="og:title" content="Chirag Arora">
+    <meta property="og:description" content="AI systems, developer tools, open-source infrastructure, and products built to hold up after the demo.">
+    <meta property="og:url" content="https://www.chiragarora.tech/">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Chirag Arora - AI Software Engineer">
-    <meta name="twitter:description" content="I build practical AI products with real technical depth.">
+    <meta name="twitter:title" content="Chirag Arora">
+    <meta name="twitter:description" content="AI systems, developer tools, open-source infrastructure, and products built to hold up after the demo.">
     <meta name="twitter:creator" content="@iChiragArora">
 
     <link rel="canonical" href="https://www.chiragarora.tech/">
-
     <title>Chirag Arora</title>
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
     <link rel="apple-touch-icon" href="/favicon.png?v=2">
@@ -25,19 +25,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Chirag Arora",
+        "url": "https://www.chiragarora.tech/",
+        "jobTitle": "Software Engineer",
+        "worksFor": { "@type": "Organization", "name": "HSBC" },
+        "homeLocation": { "@type": "Place", "name": "Pune, India" },
+        "sameAs": [
+            "https://github.com/ChiragArora31",
+            "https://www.linkedin.com/in/chirag-arora-3107/",
+            "https://x.com/iChiragArora"
+        ],
+        "knowsAbout": [
+            "AI engineering",
+            "LLM systems",
+            "retrieval-augmented generation",
+            "agent evaluation",
+            "developer tools",
+            "open-source software"
+        ]
+    }
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Reading progress"></div>
+    <progress class="scroll-progress" id="scrollProgress" max="100" value="0" aria-label="Reading progress"></progress>
 
     <header class="site-header">
         <nav class="nav" aria-label="Primary navigation">
             <a href="/" aria-current="page">home</a>
-            <a href="/#projects">projects</a>
+            <a href="/#work">work</a>
+            <a href="/#open-source">open source</a>
             <a href="/writing">writing</a>
             <a href="/collection">collection</a>
             <a href="/#contact">contact</a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
                 <span class="theme-label">theme</span>
             </button>
         </nav>
@@ -45,136 +71,202 @@
 
     <main id="main-content" class="page">
         <section id="home" class="hero" aria-label="Introduction">
+            <p class="eyebrow">software engineer · pune, india</p>
             <h1>hi i'm chirag.</h1>
-            <p class="lede">i build ai products that feel simple in the browser and serious under the hood.</p>
-            <p class="age-line">been here since <span id="ageCounter" data-birthdate="2002-07-31T00:00:00+05:30">23.000000000</span> years.</p>
+            <p class="lede">i build reliable AI systems, developer tools, and products that hold up after the demo.</p>
             <p>
-                software engineer at <a href="https://www.hsbc.co.in/" target="_blank" rel="noopener noreferrer">HSBC</a> in Pune.
-                i like LLM systems, retrieval infrastructure, security products, and tools that make developers faster.
+                i work across retrieval, agent infrastructure, evaluation, security, and the ordinary software engineering
+                that makes those systems useful in production. today, i am a software engineer at
+                <a href="https://www.hsbc.co.in/" target="_blank" rel="noopener noreferrer">HSBC</a>.
             </p>
             <p>
-                currently building <a href="https://www.phishly.in/" target="_blank" rel="noopener noreferrer">Phishly</a>,
-                contributing to <a href="https://github.com/ComposioHQ/agent-orchestrator" target="_blank" rel="noopener noreferrer">Agent Orchestrator</a>,
-                and trying to make my side projects less like demos and more like products.
+                lately: building <a href="https://github.com/ChiragArora31/Redpen" target="_blank" rel="noopener noreferrer">Redpen</a>,
+                shipping <a href="https://agentci.vercel.app" target="_blank" rel="noopener noreferrer">AgentCI</a>, and contributing reliability,
+                search, and developer-experience improvements to open-source AI infrastructure.
             </p>
-            <p>
-                i probably talk to codex more than most humans. powered by coffee, math, python, and the occasional unreasonable weekend build.
-            </p>
+        </section>
+
+        <section class="proof-ledger" aria-label="Selected evidence">
+            <div class="proof-item">
+                <strong>20</strong>
+                <span>merged PRs across agent, memory, and prompt infrastructure</span>
+            </div>
+            <div class="proof-item">
+                <strong>430+</strong>
+                <span>engineering pages made searchable through an internal RAG system</span>
+            </div>
+            <div class="proof-item">
+                <strong>2+ yrs</strong>
+                <span>building and operating production software</span>
+            </div>
+            <div class="proof-item">
+                <strong>0.1.1</strong>
+                <span>Redpen released as a working npm CLI</span>
+            </div>
         </section>
 
         <hr>
 
-        <section class="now" aria-label="Now">
-            <h2>now.</h2>
-            <ul class="now-list">
-                <li>building Phishly into a fast, useful security product for small teams.</li>
-                <li>contributing to agent orchestration infra where reliability actually matters.</li>
-                <li>learning how to make AI systems feel less magical and more inspectable.</li>
-                <li>keeping a small <a href="/collection">collection</a> of things that sharpen my taste.</li>
-            </ul>
+        <section id="work" aria-labelledby="work-heading">
+            <p class="section-kicker">selected work</p>
+            <h2 id="work-heading">systems with receipts.</h2>
+            <p class="section-intro">
+                a small set of things i can explain end to end: why they exist, where they fail, and what makes them more than a demo.
+            </p>
+
+            <div class="featured-work">
+                <article class="work-card">
+                    <div class="work-heading">
+                        <div>
+                            <p class="work-type">developer tool · 2026</p>
+                            <h3>Redpen</h3>
+                        </div>
+                        <div class="work-links">
+                            <a href="https://www.npmjs.com/package/redpen-cli" target="_blank" rel="noopener noreferrer">npm ↗</a>
+                            <a href="https://github.com/ChiragArora31/Redpen" target="_blank" rel="noopener noreferrer">source ↗</a>
+                        </div>
+                    </div>
+                    <p class="work-thesis">“done” is a claim. evidence makes it true.</p>
+                    <p>
+                        a CLI that checks coding-agent completion claims against fresh repository evidence. it imports Codex claims as
+                        untrusted input, runs applicable tests and builds, then reports each claim as proven, failed, or unverified.
+                    </p>
+                    <ul class="evidence-list">
+                        <li>independent Node.js and Python check discovery</li>
+                        <li>Codex session import with ambiguity refusal</li>
+                        <li>machine-readable, versioned evidence reports</li>
+                    </ul>
+                    <p class="stack">TypeScript · CLI · Git · npm</p>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-heading">
+                        <div>
+                            <p class="work-type">agent evaluation · 2026</p>
+                            <h3>AgentCI</h3>
+                        </div>
+                        <div class="work-links">
+                            <a href="https://agentci.vercel.app" target="_blank" rel="noopener noreferrer">live ↗</a>
+                            <a href="https://github.com/ChiragArora31/AgentCI" target="_blank" rel="noopener noreferrer">source ↗</a>
+                        </div>
+                    </div>
+                    <p class="work-thesis">CI/CD for the behaviour of AI agents.</p>
+                    <p>
+                        a release gate that compares candidate agents against production and blocks regressions in correctness,
+                        groundedness, permissions, safety, latency, and cost. every decision is backed by visible retrieval traces.
+                    </p>
+                    <ul class="evidence-list">
+                        <li>scenario-based evaluation and reproducible quality gates</li>
+                        <li>prompt-injection and restricted-document tests</li>
+                        <li>candidate-versus-production trace comparison</li>
+                    </ul>
+                    <p class="stack">Next.js · TypeScript · OpenAI · BM25 · Vitest</p>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-heading">
+                        <div>
+                            <p class="work-type">local-first applied AI · 2026</p>
+                            <h3>VaaniSetu</h3>
+                        </div>
+                        <div class="work-links">
+                            <a href="https://github.com/ChiragArora31/VaaniSetu" target="_blank" rel="noopener noreferrer">source ↗</a>
+                        </div>
+                    </div>
+                    <p class="work-thesis">reviewed, private translation for field learning material.</p>
+                    <p>
+                        a CPU-first workspace for translating English, Hindi, Marathi, and Odia documents and media locally. humans review
+                        every result before it becomes an integrity-checked package that works offline in the field.
+                    </p>
+                    <ul class="evidence-list">
+                        <li>durable single-worker queue with cancellation and recovery</li>
+                        <li>local ASR, translation, review, subtitles, speech, and video outputs</li>
+                        <li>release evidence, backup/restore, SBOM, and privacy-safe support bundles</li>
+                    </ul>
+                    <p class="stack">Python · FastAPI · local models · FFmpeg · Windows</p>
+                </article>
+            </div>
+
+            <section class="more-work" aria-label="More projects">
+                <article class="compact-work">
+                    <div>
+                        <h3><a href="https://www.phishly.in/" target="_blank" rel="noopener noreferrer">Phishly ↗</a></h3>
+                        <p>AI-native phishing simulation for small teams: realistic campaigns, risk visibility, and training before a real attacker arrives.</p>
+                    </div>
+                    <span class="source-link">live product</span>
+                </article>
+                <article class="compact-work">
+                    <div>
+                        <h3><a href="https://www.paperlens.in/" target="_blank" rel="noopener noreferrer">PaperLens ↗</a></h3>
+                        <p>turns arXiv papers into layered explanations, concept maps, quizzes, and visual learning paths, with structured-output fallbacks.</p>
+                    </div>
+                    <a class="source-link" href="https://github.com/ChiragArora31/PaperLens" target="_blank" rel="noopener noreferrer">source</a>
+                </article>
+                <article class="compact-work">
+                    <div>
+                        <h3><a href="https://github.com/ChiragArora31/VecSearch" target="_blank" rel="noopener noreferrer">VecSearch ↗</a></h3>
+                        <p>a vector database built from scratch with persistence, multiple distance metrics, document chunking, and exact, HNSW, IVF, and KD-tree indexes.</p>
+                    </div>
+                    <span class="source-link">Python · NumPy</span>
+                </article>
+            </section>
         </section>
 
         <hr>
 
-        <section class="story" aria-label="About">
-            <h2>what i care about.</h2>
-            <p>
-                i am drawn to systems where the interface looks obvious, but the backend is doing real work:
-                retrieval, orchestration, inference, realtime events, safety checks, and weird edge cases that only show up after shipping.
+        <section id="open-source" aria-labelledby="oss-heading">
+            <p class="section-kicker">open source</p>
+            <h2 id="oss-heading">changes that landed.</h2>
+            <p class="section-intro">
+                merged work across failure handling, observability, search, security, and interfaces other developers depend on.
             </p>
-            <p>
-                the goal is not to look busy. the goal is to build things that make a technical person pause and think,
-                "okay, this person actually builds."
-            </p>
-        </section>
 
-        <hr>
-
-        <section id="projects" class="projects" aria-label="Projects">
-            <h2>stuff i've built.</h2>
-            <div class="projects-grid">
-                <article class="project-item">
-                    <a href="https://www.phishly.in/" target="_blank" rel="noopener noreferrer" class="project-card">
-                        <h3>Phishly</h3>
+            <div class="oss-list">
+                <article class="oss-item">
+                    <div class="oss-stats">
+                        <strong>12</strong>
+                        <span>merged PRs</span>
+                        <span>12k+ stars</span>
+                    </div>
+                    <div>
+                        <h3><a href="https://github.com/Untrivial-ai/agent-orchestrator" target="_blank" rel="noopener noreferrer">Agent Orchestrator ↗</a></h3>
                         <p>
-                            the B2B SaaS product i'm currently building: an AI-native phishing simulation platform for startups and small teams. companies can safely simulate real attacks, identify vulnerable employees, and train them before a real attacker does.
+                            shipped CLI JSON and watch modes, doctor checks, nested-project resolution, lifecycle routing fixes,
+                            dashboard failure surfacing, observability bundles, merge-conflict links, and project-scoped terminal resolution.
                         </p>
-                    </a>
-                    <div class="project-meta">
-                        <span>building now</span>
-                        <a href="https://github.com/ChiragArora31/Phishly" target="_blank" rel="noopener noreferrer">source</a>
+                        <a class="detail-link" href="https://github.com/Untrivial-ai/agent-orchestrator/pulls?q=is%3Apr+is%3Amerged+author%3AChiragArora31" target="_blank" rel="noopener noreferrer">inspect the merged work ↗</a>
                     </div>
                 </article>
 
-                <article class="project-item">
-                    <a href="https://github.com/ComposioHQ/agent-orchestrator" target="_blank" rel="noopener noreferrer" class="project-card">
-                        <h3>Composio Agent Orchestrator</h3>
+                <article class="oss-item">
+                    <div class="oss-stats">
+                        <strong>6</strong>
+                        <span>merged PRs</span>
+                        <span>1.1k+ stars</span>
+                    </div>
+                    <div>
+                        <h3><a href="https://github.com/px0-ai/px0" target="_blank" rel="noopener noreferrer">px0 ↗</a></h3>
                         <p>
-                            open-source work on a platform that coordinates fleets of AI coding agents across isolated worktree, branch, and PR flows. i shipped state/session reliability fixes, CLI JSON/watch output, and dashboard/doctor tooling.
+                            added organization-scoped API-key validation, model configuration for prompt versions, strict template-variable
+                            checks, hybrid registry search, verified self-updates, and CLI file opening.
                         </p>
-                    </a>
-                    <div class="project-meta">
-                        <span>13 PRs merged</span>
+                        <a class="detail-link" href="https://github.com/px0-ai/px0/pulls?q=is%3Apr+is%3Amerged+author%3AChiragArora31" target="_blank" rel="noopener noreferrer">inspect the merged work ↗</a>
                     </div>
                 </article>
 
-                <article class="project-item">
-                    <a href="https://github.com/ChiragArora31/VecSearch" target="_blank" rel="noopener noreferrer" class="project-card">
-                        <h3>VecSearch</h3>
-                        <p>
-                            a vector database built from scratch for semantic search and retrieval. embedding storage, similarity indexing, cosine search, and the kind of internals you understand better after rebuilding them.
-                        </p>
-                    </a>
-                    <div class="project-meta">
-                        <span>feb 14, 2026</span>
+                <article class="oss-item">
+                    <div class="oss-stats">
+                        <strong>2</strong>
+                        <span>merged PRs</span>
+                        <span>65k+ stars</span>
                     </div>
-                </article>
-
-                <article class="project-item">
-                    <a href="https://www.paperlens.in/" target="_blank" rel="noopener noreferrer" class="project-card">
-                        <h3>PaperLens</h3>
+                    <div>
+                        <h3><a href="https://github.com/mem0ai/mem0" target="_blank" rel="noopener noreferrer">mem0 ↗</a></h3>
                         <p>
-                            turns dense research papers into visual explanations and structured insights. built for the moment when a paper is important, but your brain needs a map before it needs more text.
+                            added interpretable memory-search score explanations and carried that capability through the REST server,
+                            so retrieval results can expose why they ranked where they did.
                         </p>
-                    </a>
-                    <div class="project-meta">
-                        <span>feb 22, 2026</span>
-                    </div>
-                </article>
-
-                <article class="project-item">
-                    <a href="https://github.com/ChiragArora31/PocketLlama" target="_blank" rel="noopener noreferrer" class="project-card">
-                        <h3>PocketLlama</h3>
-                        <p>
-                            an on-device LLM implementation using TinyLlama. offline conversational AI, mobile inference constraints, and a useful reminder that models are only one piece of the product.
-                        </p>
-                    </a>
-                    <div class="project-meta">
-                        <span>jan 21, 2026</span>
-                    </div>
-                </article>
-
-                <article class="project-item">
-                    <a href="https://github.com/ChiragArora31/SkyPing" target="_blank" rel="noopener noreferrer" class="project-card">
-                        <h3>SkyPing</h3>
-                        <p>
-                            realtime flight tracking around Pune Airport with event-based notifications. small obsession, real system: live data, filtering, and signal instead of noise.
-                        </p>
-                    </a>
-                    <div class="project-meta">
-                        <span>nov 21, 2025</span>
-                    </div>
-                </article>
-
-                <article class="project-item">
-                    <a href="https://github.com/ChiragArora31/API-Talks" target="_blank" rel="noopener noreferrer" class="project-card">
-                        <h3>API-Talks</h3>
-                        <p>
-                            a conversational layer over API documentation so developers can ask questions naturally and get context-aware answers without spelunking through static docs.
-                        </p>
-                    </a>
-                    <div class="project-meta">
-                        <span>nov 2, 2025</span>
+                        <a class="detail-link" href="https://github.com/mem0ai/mem0/pulls?q=is%3Apr+is%3Amerged+author%3AChiragArora31" target="_blank" rel="noopener noreferrer">inspect the merged work ↗</a>
                     </div>
                 </article>
             </div>
@@ -182,18 +274,68 @@
 
         <hr>
 
-        <section id="contact" aria-label="Contact">
-            <h2>say hi.</h2>
+        <section id="experience" aria-labelledby="experience-heading">
+            <p class="section-kicker">production work</p>
+            <h2 id="experience-heading">where the edges are real.</h2>
+            <div class="experience-list">
+                <article class="experience-item">
+                    <div class="experience-meta">
+                        <strong>HSBC</strong>
+                        <span>2024 to now</span>
+                    </div>
+                    <div>
+                        <h3>Software Engineer</h3>
+                        <p>
+                            build and maintain Java/Spring systems that enrich real-time corporate-action events across vendor feeds,
+                            XML/JSON transformations, and ActiveMQ pipelines. also built an internal RAG assistant over 430+ engineering
+                            pages, covering ingestion, embeddings, retrieval, context assembly, and LLM-backed answers.
+                        </p>
+                    </div>
+                </article>
+                <article class="experience-item">
+                    <div class="experience-meta">
+                        <strong>Futures First</strong>
+                        <span>2024</span>
+                    </div>
+                    <div>
+                        <h3>Financial Market Intern</h3>
+                        <p>
+                            built commodity report-release analytics over historical market data and automated Eikon/TRTH extraction,
+                            cleaning, and research datasets; the resulting strategy work improved measured success rate by 15%.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="principles" aria-labelledby="principles-heading">
+            <p class="section-kicker">how i work</p>
+            <h2 id="principles-heading">evidence over theatre.</h2>
+            <div class="principles-grid">
+                <p><strong>make behaviour measurable.</strong> evals, traces, regression suites, and explicit failure states beat a confident demo.</p>
+                <p><strong>own the whole path.</strong> interface, API, data, deployment, documentation, and the awkward operational edges in between.</p>
+                <p><strong>write things down.</strong> clear architecture, trade-offs, runbooks, and limits make software easier to trust and improve.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <p class="section-kicker">contact</p>
+            <h2 id="contact-heading">say hi.</h2>
             <p>
-                best places to find me:
-                <a href="mailto:chiragarora1831@gmail.com">email</a>,
-                <a href="https://github.com/ChiragArora31/" target="_blank" rel="noopener noreferrer">github</a>,
-                <a href="https://www.linkedin.com/in/chirag-arora-3107/" target="_blank" rel="noopener noreferrer">linkedin</a>,
-                <a href="https://x.com/iChiragArora" target="_blank" rel="noopener noreferrer">x</a>.
+                i am open to serious AI engineering, applied AI, and agent-infrastructure roles, especially where reliability,
+                product judgment, and hands-on building all matter.
             </p>
-            <p>open to serious AI work, sharp teams, and people building things with a pulse.</p>
-            <p>available for: AI engineering roles, early-stage product work, open-source infra, and sharp teams moving fast.</p>
-            <p class="contact-note">p.s. if you&apos;re building something ambitious, reach out. i read every e-mail that hits my inbox and usually reply within 60 mins.</p>
+            <p class="contact-links">
+                <a href="mailto:chiragarora1831@gmail.com">email</a>
+                <a href="https://github.com/ChiragArora31/" target="_blank" rel="noopener noreferrer">github</a>
+                <a href="https://www.linkedin.com/in/chirag-arora-3107/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                <a href="https://x.com/iChiragArora" target="_blank" rel="noopener noreferrer">x</a>
+            </p>
+            <p class="last-updated">last updated september 2026.</p>
         </section>
     </main>
 
