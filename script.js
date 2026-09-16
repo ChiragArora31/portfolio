@@ -1,6 +1,8 @@
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 const scrollProgress = document.getElementById('scrollProgress');
+const ageCounter = document.getElementById('ageCounter');
+const githubChart = document.getElementById('githubChart');
 
 const savedTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', savedTheme);
@@ -13,6 +15,10 @@ function updateThemeLabel() {
     const currentTheme = html.getAttribute('data-theme');
     themeToggle.setAttribute('aria-pressed', String(currentTheme === 'dark'));
     themeToggle.querySelector('.theme-label').textContent = currentTheme === 'dark' ? 'light' : 'dark';
+
+    if (githubChart) {
+        githubChart.src = currentTheme === 'dark' ? githubChart.dataset.darkSrc : githubChart.dataset.lightSrc;
+    }
 }
 
 updateThemeLabel();
@@ -42,3 +48,18 @@ function updateScrollProgress() {
 
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 updateScrollProgress();
+
+function updateAgeCounter() {
+    if (!ageCounter) {
+        return;
+    }
+
+    const birthDate = new Date(ageCounter.dataset.birthdate);
+    const now = new Date();
+    const years = (now - birthDate) / (1000 * 60 * 60 * 24 * 365.2425);
+
+    ageCounter.textContent = years.toFixed(9);
+}
+
+updateAgeCounter();
+setInterval(updateAgeCounter, 100);
