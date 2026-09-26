@@ -31,7 +31,7 @@
 
     <header class="masthead" aria-label="Page header">
         <a class="wordmark" href="/">Chirag Arora</a>
-        <p>Software, made in Pune.</p>
+        <p>Software, made in India.</p>
     </header>
 
     <main>
@@ -55,8 +55,38 @@
                     </div>
                 </header>
                 <figure class="project-visual sky-visual">
-                    <img src="/made-assets/skyping-scene.svg" alt="Illustration of SkyPing showing a flight notification over the Pune skyline" width="1440" height="900">
-                    <figcaption>Product illustration. The application watches live aircraft data and triggers native macOS notifications.</figcaption>
+                    <div class="sky-frame">
+                        <img src="/made-assets/skyping-pune-dusk.webp" alt="A passenger aircraft descending over Pune at blue hour, seen from an apartment balcony" width="1440" height="901">
+                        <div class="sky-coordinate" aria-hidden="true">
+                            <span>Pune airspace</span>
+                            <span class="live-dot">Live</span>
+                        </div>
+                        <div class="notification-stack" aria-label="Examples of native SkyPing flight notifications">
+                            <article class="flight-notification notification-back">
+                                <span class="plane-mark" aria-hidden="true">✈</span>
+                                <div><strong>6E 1848 · Ascending</strong><span>PNQ → DEL · +5.1 m/s</span></div>
+                                <time>10 min ago</time>
+                            </article>
+                            <article class="flight-notification notification-middle">
+                                <span class="plane-mark" aria-hidden="true">✈</span>
+                                <div><strong>6E 1548 · Descending</strong><span>DXB → PNQ · −4.2 m/s</span></div>
+                                <time>8 min ago</time>
+                            </article>
+                            <article class="flight-notification notification-front">
+                                <span class="plane-mark" aria-hidden="true">✈</span>
+                                <div><strong>AI 9844 · Descending</strong><span>DXB → PNQ · −2.0 m/s</span></div>
+                                <time>now</time>
+                            </article>
+                        </div>
+                        <div class="telemetry-card" aria-label="SkyPing live aircraft telemetry example">
+                            <div class="telemetry-title"><span></span> SkyPing / live aircraft</div>
+                            <div class="telemetry-row"><b>AI 9844</b><span>2,184 m</span><em>descending</em></div>
+                            <div class="telemetry-row"><b>6E 441</b><span>1,726 m</span><em>descending</em></div>
+                            <div class="telemetry-row"><b>IGO 1548</b><span>3,011 m</span><em>ascending</em></div>
+                            <p>Scanning a geo-box around Pune<br>Altitude filter &lt; 4,000 m · refresh 10 s</p>
+                        </div>
+                    </div>
+                    <figcaption>A portfolio composition of SkyPing’s real notification and telemetry loop, inspired by the moment that started it: seeing a plane from my balcony and wanting to know its story.</figcaption>
                 </figure>
                 <div class="project-story">
                     <div class="story-main">
