@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Four pieces of software made by Chirag Arora from curiosity: SkyPing, PaperLens, PocketLlama, and Redpen.">
+    <meta name="author" content="Chirag Arora">
+    <meta name="theme-color" content="#f3efe6">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Things I made — Chirag Arora">
+    <meta property="og:description" content="I make software for things I can't stop thinking about.">
+    <meta property="og:url" content="https://www.chiragarora.tech/made">
+    <meta property="og:image" content="https://www.chiragarora.tech/made-assets/paperlens-home.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Things I made — Chirag Arora">
+    <meta name="twitter:description" content="I make software for things I can't stop thinking about.">
+    <meta name="twitter:image" content="https://www.chiragarora.tech/made-assets/paperlens-home.png">
+
+    <link rel="canonical" href="https://www.chiragarora.tech/made">
+    <title>Things I made — Chirag Arora</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/made.css">
+</head>
+<body>
+    <a class="skip-link" href="#work">Skip to the work</a>
+
+    <header class="masthead" aria-label="Page header">
+        <a class="wordmark" href="/">Chirag Arora</a>
+        <p>Software, made in Pune.</p>
+    </header>
+
+    <main>
+        <section class="intro" aria-labelledby="page-title">
+            <p class="edition">A small collection · 2026</p>
+            <h1 id="page-title">I make software for things I can’t stop thinking about.</h1>
+            <div class="intro-copy">
+                <p>I’m a software engineer from India. Most of what I make starts the same way: I notice something that makes me curious, bothers me, or feels like it should exist.</p>
+                <p>Then I build it.</p>
+            </div>
+            <a class="down-link" href="#work">Four recent things <span aria-hidden="true">↓</span></a>
+        </section>
+
+        <section class="projects" id="work" aria-label="Selected projects">
+            <article class="project" id="skyping">
+                <header class="project-heading">
+                    <p class="project-number">01</p>
+                    <div>
+                        <p class="project-question">I wanted to know where the planes above me were going.</p>
+                        <h2>SkyPing</h2>
+                    </div>
+                </header>
+                <figure class="project-visual sky-visual">
+                    <img src="/made-assets/skyping-scene.svg" alt="Illustration of SkyPing showing a flight notification over the Pune skyline" width="1440" height="900">
+                    <figcaption>Product illustration. The application watches live aircraft data and triggers native macOS notifications.</figcaption>
+                </figure>
+                <div class="project-story">
+                    <div class="story-main">
+                        <p>I kept seeing planes above Pune and wondering where they were going. So I made my Mac tell me.</p>
+                        <p>SkyPing watches the sky around a location and sends a notification when an aircraft appears, along with where it’s coming from and where it’s headed.</p>
+                        <p class="pull-quote">There wasn’t a productivity problem to solve. I was just curious.</p>
+                    </div>
+                    <aside class="project-meta">
+                        <p>Python<br>OpenSky<br>macOS notifications</p>
+                        <a href="https://github.com/ChiragArora31/SkyPing" target="_blank" rel="noopener noreferrer">Explore the source ↗</a>
+                    </aside>
+                </div>
+            </article>
+
+            <article class="project" id="paperlens">
+                <header class="project-heading">
+                    <p class="project-number">02</p>
+                    <div>
+                        <p class="project-question">What if papers were designed to be understood?</p>
+                        <h2>PaperLens</h2>
+                    </div>
+                </header>
+                <figure class="project-visual paper-visual">
+                    <img src="/made-assets/paperlens-home.png" alt="PaperLens interface inviting the reader to turn an arXiv paper into a visual learning experience" width="1440" height="900" loading="lazy">
+                    <figcaption>The live PaperLens interface, captured in September 2026.</figcaption>
+                </figure>
+                <div class="project-story">
+                    <div class="story-main">
+                        <p>Research papers contain beautiful ideas hidden behind terrible interfaces.</p>
+                        <p>I built PaperLens to turn an arXiv paper into something closer to an interactive textbook: intuition first, then diagrams, concepts, mathematics, and the full technical explanation.</p>
+                        <p class="pull-quote">The interesting problem wasn’t summarization. It was deciding how an idea should reveal itself to someone learning it.</p>
+                    </div>
+                    <aside class="project-meta">
+                        <p>Next.js<br>Gemini<br>Mermaid</p>
+                        <a href="https://paperlens.in" target="_blank" rel="noopener noreferrer">Try PaperLens ↗</a>
+                        <a href="https://github.com/ChiragArora31/PaperLens" target="_blank" rel="noopener noreferrer">Explore the source ↗</a>
+                    </aside>
+                </div>
+            </article>
+
+            <article class="project" id="pocketllama">
+                <header class="project-heading">
+                    <p class="project-number">03</p>
+                    <div>
+                        <p class="project-question">AI that belongs to the device.</p>
+                        <h2>PocketLlama</h2>
+                    </div>
+                </header>
+                <figure class="project-visual pocket-visual">
+                    <img src="/made-assets/pocketllama-chat.svg" alt="PocketLlama chat interface running a TinyLlama model locally on a phone" width="1280" height="820" loading="lazy">
+                    <figcaption>The working interface: a small language model with no server in the middle.</figcaption>
+                </figure>
+                <div class="project-story">
+                    <div class="story-main">
+                        <p>What if your AI didn’t need the internet, an account, or permission from a server?</p>
+                        <p>PocketLlama is a small language model that lives entirely on your phone. Download the model once and conversations happen locally. No API key, no usage meter, no chat leaving the device.</p>
+                        <p class="pull-quote">I like the idea that some software should simply belong to the person holding it.</p>
+                    </div>
+                    <aside class="project-meta">
+                        <p>React Native<br>llama.cpp<br>TinyLlama</p>
+                        <a href="https://github.com/ChiragArora31/PocketLlama" target="_blank" rel="noopener noreferrer">Explore the source ↗</a>
+                    </aside>
+                </div>
+            </article>
+
+            <article class="project" id="redpen">
+                <header class="project-heading">
+                    <p class="project-number">04</p>
+                    <div>
+                        <p class="project-question">“Done” is a claim.</p>
+                        <h2>Redpen</h2>
+                    </div>
+                </header>
+                <figure class="project-visual terminal-visual">
+                    <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span><b>redpen check</b></div>
+                    <pre aria-label="Example Redpen verification report"><code><span class="terminal-muted">AGENT CLAIMS</span>
+
+<span class="terminal-good">✓</span> “Updated src/pagination.mjs.”
+  src/pagination.mjs · +2 -2
+
+<span class="terminal-good">✓</span> “Added regression coverage.”
+  tests/pagination.test.mjs
+
+<span class="terminal-good">✓</span> “All tests pass.”
+  npm run test · exit 0
+
+<span class="terminal-unknown">?</span> “No breaking changes.”
+  No deterministic verifier is available.
+  Redpen doesn’t guess.
+
+<span class="terminal-rule">────────────────────────────────</span>
+<strong>8 proven · 0 failed · 1 unverified</strong></code></pre>
+                    <figcaption>A claim ends up proven, failed, or unverified. Uncertainty stays visible.</figcaption>
+                </figure>
+                <div class="project-story">
+                    <div class="story-main">
+                        <p>Coding agents learned to say “done” before they learned to prove it. So I built Redpen.</p>
+                        <p>It takes what an agent claims it accomplished and compares those claims against independent evidence from the repository: actual changes, tests, builds, and other deterministic checks.</p>
+                        <p class="pull-quote">The last state is my favorite. Good software should be allowed to say: I don’t know.</p>
+                        <p class="install"><span>$</span> npm install -g redpen-cli</p>
+                    </div>
+                    <aside class="project-meta">
+                        <p>TypeScript<br>Git<br>Codex</p>
+                        <a href="https://www.npmjs.com/package/redpen-cli" target="_blank" rel="noopener noreferrer">Install from npm ↗</a>
+                        <a href="https://github.com/ChiragArora31/Redpen" target="_blank" rel="noopener noreferrer">Explore the source ↗</a>
+                    </aside>
+                </div>
+            </article>
+        </section>
+
+        <section class="about" aria-labelledby="about-heading">
+            <p class="edition">A little about how I make</p>
+            <h2 id="about-heading">Questions first.<br>Frameworks second.</h2>
+            <div class="about-copy">
+                <p>I don’t think of software as a collection of frameworks. I like starting with a question and finding the smallest thing that makes the idea real.</p>
+                <p>Sometimes that’s a language model running on a phone. Sometimes it’s a terminal command. Sometimes it’s a notification that tells me where the plane above my head is going.</p>
+                <p>I’m interested in AI, tools, interfaces, learning, and strange little pieces of software that make computers feel more personal.</p>
+                <p class="about-last">I want to spend more of my life making them.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p class="footer-name">Chirag Arora</p>
+            <p>Pune, India</p>
+        </div>
+        <nav aria-label="Contact links">
+            <a href="https://github.com/ChiragArora31" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://x.com/iChiragArora" target="_blank" rel="noopener noreferrer">X ↗</a>
+            <a href="mailto:chiragarora31@gmail.com">Email ↗</a>
+        </nav>
+    </footer>
+
+</body>
+</html>

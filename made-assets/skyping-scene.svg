@@ -1,0 +1,39 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SkyPing product illustration</title>
+  <desc id="desc">An illustrated evening sky above Pune with a macOS-style flight notification.</desc>
+  <defs>
+    <linearGradient id="sky" x1="720" y1="0" x2="720" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#173159"/>
+      <stop offset="0.52" stop-color="#E98B68"/>
+      <stop offset="1" stop-color="#F4D7A5"/>
+    </linearGradient>
+    <filter id="shadow" x="760" y="120" width="590" height="330" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#13203B" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1440" height="900" fill="url(#sky)"/>
+  <circle cx="237" cy="198" r="84" fill="#FFE8B3" fill-opacity="0.8"/>
+  <path d="M0 686C163 626 251 653 392 705C563 768 707 640 864 665C1045 694 1121 781 1440 653V900H0V686Z" fill="#172237"/>
+  <path d="M0 744C219 674 363 790 545 737C782 668 907 777 1095 736C1238 705 1336 730 1440 772V900H0V744Z" fill="#0F1726"/>
+  <g opacity="0.75" fill="#F7C978">
+    <circle cx="101" cy="774" r="3"/><circle cx="159" cy="746" r="2"/><circle cx="206" cy="783" r="3"/><circle cx="293" cy="752" r="2"/>
+    <circle cx="369" cy="797" r="3"/><circle cx="462" cy="765" r="2"/><circle cx="580" cy="803" r="3"/><circle cx="674" cy="750" r="2"/>
+    <circle cx="827" cy="789" r="3"/><circle cx="933" cy="758" r="2"/><circle cx="1058" cy="790" r="3"/><circle cx="1204" cy="754" r="2"/>
+  </g>
+  <g transform="translate(497 251) rotate(-8)">
+    <path d="M0 25L142 18L209 -19L229 -17L185 19L282 15L312 0L325 1L307 17L329 24L326 31L302 28L316 45L304 47L279 27L183 35L231 68L211 72L141 37L3 46L-16 36L0 25Z" fill="#F8FAFC"/>
+  </g>
+  <path d="M542 330C650 360 722 381 804 349" stroke="#F8FAFC" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 18" opacity="0.7"/>
+  <g filter="url(#shadow)">
+    <rect x="818" y="166" width="478" height="228" rx="28" fill="#F7F7F5" fill-opacity="0.96"/>
+    <rect x="850" y="200" width="54" height="54" rx="15" fill="#15213A"/>
+    <path d="M861 228L875 225L886 215L892 216L884 227L896 225L902 220L906 221L901 227L907 230L905 234L899 233L902 240L898 241L892 233L881 235L887 245L881 246L873 237L862 239L857 234L861 228Z" fill="#F7F7F5"/>
+    <text x="925" y="218" fill="#1A1A1A" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">SkyPing</text>
+    <text x="925" y="244" fill="#6B6B67" font-family="Inter, Arial, sans-serif" font-size="15">now</text>
+    <text x="850" y="299" fill="#151515" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700">Aircraft over Pune</text>
+    <text x="850" y="337" fill="#3F3F3C" font-family="Inter, Arial, sans-serif" font-size="20">Air India 852 · descending</text>
+    <text x="850" y="369" fill="#3F3F3C" font-family="Inter, Arial, sans-serif" font-size="20">Delhi → Pune</text>
+  </g>
+  <text x="70" y="96" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="3">PUNE · 18°32′N 73°51′E</text>
+  <text x="70" y="851" fill="#F8FAFC" fill-opacity="0.66" font-family="Inter, Arial, sans-serif" font-size="16">Product illustration — replace with a live notification photograph when available.</text>
+</svg>
