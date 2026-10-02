@@ -245,31 +245,8 @@ hr {
     scroll-margin-top: 5rem;
 }
 
-.proof-ledger {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-top: 3.25rem;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.proof-item {
-    min-width: 0;
-    padding: 1.15rem 1rem 1.2rem;
-    border-right: 1px solid var(--border-color);
-}
-
-.proof-item:first-child {
-    padding-left: 0;
-}
-
-.proof-item:last-child {
-    padding-right: 0;
-    border-right: 0;
-}
-
 .github-activity {
-    margin-top: 1.6rem;
+    margin-top: 3.25rem;
 }
 
 .activity-heading {
@@ -312,21 +289,6 @@ hr {
 
 .activity-note {
     margin: 0.55rem 0 0;
-}
-
-.proof-item strong {
-    display: block;
-    margin-bottom: 0.35rem;
-    color: var(--heading-color);
-    font-size: 1.25rem;
-    line-height: 1.1;
-}
-
-.proof-item span {
-    display: block;
-    color: var(--muted-color);
-    font-size: 0.78rem;
-    line-height: 1.45;
 }
 
 .featured-work {
@@ -539,13 +501,6 @@ hr {
     flex-wrap: wrap;
     gap: 0.6rem 1.1rem;
     margin-bottom: 0;
-}
-
-.last-updated {
-    margin: 2.5rem 0 0;
-    color: var(--muted-color);
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
 }
 
 #contact p:last-child {
@@ -795,22 +750,6 @@ pre code {
     .nav {
         gap: 0.55rem 0.75rem;
         font-size: 0.86rem;
-    }
-
-    .proof-ledger {
-        grid-template-columns: 1fr;
-    }
-
-    .proof-item,
-    .proof-item:first-child,
-    .proof-item:last-child {
-        padding: 0.9rem 0;
-        border-right: 0;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .proof-item:last-child {
-        border-bottom: 0;
     }
 
     .activity-heading {
