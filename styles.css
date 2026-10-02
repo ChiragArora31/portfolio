@@ -376,6 +376,12 @@ hr {
     border-bottom: 1px solid var(--border-color);
 }
 
+.compact-work:last-child,
+.oss-item:last-child,
+.experience-item:last-child {
+    border-bottom: 0;
+}
+
 .compact-work h3 {
     margin-bottom: 0.3rem;
     font-size: 1.08rem;
