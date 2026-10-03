@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coding agents can hand us an implementation. Redpen asks what evidence should count as a completed task.">
+    <meta name="author" content="Chirag Arora">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The work after “done” - Chirag Arora">
+    <meta property="og:description" content="Coding agents can hand us an implementation. Redpen asks what evidence should count as a completed task.">
+    <meta property="og:url" content="https://www.chiragarora.tech/redpen">
+    <meta property="article:published_time" content="2026-10-03T00:00:00+05:30">
+    <meta property="article:author" content="Chirag Arora">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The work after “done” - Chirag Arora">
+    <meta name="twitter:description" content="Coding agents can hand us an implementation. Redpen asks what evidence should count as a completed task.">
+    <meta name="twitter:creator" content="@iChiragArora">
+
+    <link rel="canonical" href="https://www.chiragarora.tech/redpen">
+    <title>The work after “done” - Chirag Arora</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="redpen.css">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The work after “done”",
+    "description": "Coding agents can hand us an implementation. Redpen asks what evidence should count as a completed task.",
+    "datePublished": "2026-10-03",
+    "dateModified": "2026-10-03",
+    "author": {
+        "@type": "Person",
+        "name": "Chirag Arora",
+        "url": "https://www.chiragarora.tech/"
+    },
+    "mainEntityOfPage": "https://www.chiragarora.tech/redpen",
+    "inLanguage": "en"
+}
+    </script>
+</head>
+<body class="redpen-essay">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <progress class="scroll-progress" id="scrollProgress" max="100" value="0" aria-label="Reading progress"></progress>
+
+    <header class="site-header">
+        <nav class="nav" aria-label="Primary navigation">
+            <a href="/">home</a>
+            <a href="/#work">work</a>
+            <a href="/#open-source">open source</a>
+            <a href="/writing">writing</a>
+            <a href="/collection">collection</a>
+            <a href="/#contact">contact</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+                <span class="theme-label">theme</span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page essay-page">
+        <article>
+            <header class="essay-header">
+                <a class="essay-kicker" href="/writing">&larr; all writing</a>
+                <h1>The work after “done”</h1>
+                <p class="essay-dek">Coding agents can hand us an implementation. What should count as a completed task?</p>
+                <div class="essay-meta">
+                    <span>Chirag Arora</span>
+                    <span aria-hidden="true">·</span>
+                    <time datetime="2026-10-03">oct 3, 2026</time>
+                    <span aria-hidden="true">·</span>
+                    <span>9 min read</span>
+                </div>
+            </header>
+
+            <div class="essay-body">
+                <p>The awkward part of using a coding agent is often the moment it tells you it's done.</p>
+
+                <p>You asked it to fix a bug. It read the repository, changed a few files, added a test, and returned a tidy summary. A task that might have occupied your afternoon is now waiting for review.</p>
+
+                <p>Instead of asking a tool to complete a line of code, we can ask it to work through a problem: inspect the code, make a change, run commands, and revise the result.</p>
+
+                <p>It is no longer a fringe workflow. In Stack Overflow's <a href="https://survey.stackoverflow.co/2025/ai">2025 developer survey</a>, 84% of respondents said they used or planned to use AI tools in development. That includes ordinary assistants, not just autonomous agents. More specifically, GitHub <a href="https://github.blog/ai-and-ml/github-copilot/copilot-faster-smarter-and-built-for-how-you-work-now/">reported in October 2025</a> that its coding agent was contributing to roughly 1.2 million pull requests a month.</p>
+
+                <p>But the last step of the workflow is still familiar. You open the diff and try to work out whether the task was actually completed.</p>
+
+                <p>The agent has saved you some implementation work. Now you need to know which parts of its summary you can rely on.</p>
+
+                <h2 id="a-convincing-answer-can-still-leave-work-unfinished">A convincing answer can still leave work unfinished</h2>
+
+                <p>Consider a small pagination bug. A null cursor should return the first page, but the function returns an empty array instead.</p>
+
+                <p>An agent changes the function and adds a test. Its final message says:</p>
+
+                <pre tabindex="0" aria-label="Example output"><code>Fixed the null-cursor bug.
+Added regression coverage.
+All tests pass.
+No breaking changes.</code></pre>
+
+                <p>Suppose the new assertion is:</p>
+
+                <pre tabindex="0" aria-label="Code example"><code>assert.ok(Array.isArray(page(null)));</code></pre>
+
+                <p>The test passes. Unfortunately, the old, broken implementation also returned an array. This test would not catch the bug returning tomorrow.</p>
+
+                <p>In this example, a test was added and the test passed. Neither fact establishes that it checks the behavior we care about.</p>
+
+                <p>You don't need to assume the agent is being dishonest. It may have run every command it says it ran. Its account of the work can be accurate while its conclusion is too broad.</p>
+
+                <p>Humans do this too. We confuse finishing the steps with achieving the result. An agent makes the distinction harder to notice because it can produce the code, the test, and the explanation in one smooth interaction.</p>
+
+                <p>Asking it “are you sure?” does not resolve this. What would help is something specific: show that the test catches the original bug.</p>
+
+                <h2 id="take-done-apart">Take “done” apart</h2>
+
+                <p>The completion message above contains several claims with different kinds of evidence behind them.</p>
+
+                <p>“All tests pass” can be checked by running the relevant test command. “A test was added” can be checked against the task's starting state. “This regression test catches the bug” needs a before-and-after comparison. “No breaking changes” may need a much wider set of checks, including knowledge of callers that aren't in the repository.</p>
+
+                <p>Treating these as one yes-or-no answer loses information. A build can succeed while the regression claim is unsupported. A useful fix can coexist with an overly confident compatibility claim.</p>
+
+                <p>For each claim, we should be able to ask: what observation would support it, and what observation would contradict it?</p>
+
+                <p>That question is more useful than asking how confident the agent sounds. It is also more useful than having another model read the summary and say it looks reasonable. A second model can help with review, but agreement between two explanations is not the same as a passing execution or a reproduced failure.</p>
+
+                <p>I started building <a href="https://github.com/ChiragArora31/Redpen">Redpen</a> around this distinction. It is a local definition-of-done and verification layer for coding agents. The idea is simple:</p>
+
+                <blockquote><p>“Done” is a claim. Evidence makes it true.</p></blockquote>
+
+                <p>Its job is to keep the task, the agent's claims, and the evidence connected, so the reviewer doesn't have to reconstruct those connections from scratch.</p>
+
+                <h2 id="start-before-the-implementation">Start before the implementation</h2>
+
+                <p>To check what a task changed, you need to know what existed beforehand.</p>
+
+                <p>If a repository already had an uncommitted test when the task began, its presence at the end is not evidence that this task added it. Comparing only with the last commit would give credit for work that was already there.</p>
+
+                <p>Redpen records the task and a Git snapshot when you start. That snapshot includes the relevant staged, unstaged, and untracked state. Later checks compare with that starting point, even if changes have since been committed.</p>
+
+                <p>It doesn't establish who authored a change. It establishes a more modest fact: this changed after the task began.</p>
+
+                <p>The task also gets an editable definition of done. Redpen generates an initial checklist from the project's capabilities, but a generated checklist does not understand every requirement. The developer needs to make important requirements explicit. For a null-cursor fix, “tests pass” is weaker than “the null-cursor test fails before the fix and passes afterward.”</p>
+
+                <p>The basic workflow is:</p>
+
+                <pre tabindex="0" aria-label="Code example"><code>redpen start &quot;Fix pagination when cursor is null&quot;
+
+# work normally with Codex
+
+redpen import codex
+redpen check</code></pre>
+
+                <p>The import brings in the completion message, not proof of its contents. Redpen parses recognizable claims and runs applicable verifiers independently. An agent's transcript saying that a command succeeded is not accepted as the command's result.</p>
+
+                <p>This separation also keeps the agent's prose from silently becoming the task specification. What we required and what the agent says it did are related, but they are not the same thing.</p>
+
+                <h2 id="make-the-test-earn-its-place">Make the test earn its place</h2>
+
+                <p>The pagination example suggests a stronger kind of evidence than a changed test file.</p>
+
+                <p>Keep the new test fixed. Run it against the implementation from the task's baseline. Then run it against the current implementation.</p>
+
+                <p>For our example, the assertion should check the result:</p>
+
+                <pre tabindex="0" aria-label="Code example"><code>assert.deepEqual(page(null), [1, 2]);</code></pre>
+
+                <p>If this assertion fails on the baseline and passes on the current code, the test distinguishes the two implementations on the behavior we specified. If it passes on both, it hasn't demonstrated the regression.</p>
+
+                <p>Redpen v0.4 adds an opt-in verifier for this comparison:</p>
+
+                <pre tabindex="0" aria-label="Code example"><code>redpen add &quot;Null cursor regression&quot; \
+  --type regression-test \
+  --path tests/null-cursor.test.mjs
+
+redpen check</code></pre>
+
+                <p>It creates baseline and current snapshots in temporary directories, puts the current test into the baseline snapshot, and executes both. A missing import doesn't count as catching the bug. The baseline must fail the same named assertion test that passes on the current snapshot.</p>
+
+                <p>The first implementation is narrow: a JavaScript <code>node:test</code> file with exactly one unskipped test, without dependency installation or build steps. Those temporary directories are not a security sandbox; tests still execute with your permissions.</p>
+
+                <p>Even when this check succeeds, it proves the tested case, not the entire pagination system. A poor assertion can still encode the wrong requirement. A human still has to decide whether the expected result is right.</p>
+
+                <p>“This test detects this difference” is a useful result. Calling it “the bug is definitely fixed” would throw away that precision.</p>
+
+                <h2 id="leave-room-for-unverified">Leave room for “unverified”</h2>
+
+                <p>Redpen gives each condition or claim one of three results: <code>PROVEN</code>, <code>FAILED</code>, or <code>UNVERIFIED</code>.</p>
+
+                <p>The difference between the last two matters. A test command that runs and fails supplies negative evidence. A test command that cannot be discovered leaves a gap. Those shouldn't produce the same answer.</p>
+
+                <p>The same is true of compatibility. If the agent says “no breaking changes” and no verifier can establish it, that claim stays unverified. It may be true. Redpen does not know.</p>
+
+                <p>In the reproducible pagination demo, the result includes these lines, shortened here:</p>
+
+                <pre tabindex="0" aria-label="Example output"><code>✓ Null cursor regression
+  Fails with an assertion on the baseline; passes now.
+
+✓ &quot;All tests pass.&quot;
+  npm run test · exit 0
+
+? &quot;No breaking changes.&quot;
+  No deterministic evidence is available.</code></pre>
+
+                <p>There is a separate decision about whether the task is done. By default, every required criterion must be proven, and a claim contradicted by evidence blocks <code>DONE</code>. An extra unsupported claim remains visible without enlarging the agreed task contract. With <code>--strict-claims</code>, every agent claim must be proven too.</p>
+
+                <p>A <code>DONE</code> verdict means the configured contract has been satisfied, not that every property of the software has been checked. If the contract is too weak, the verdict will be too weak. Making that contract inspectable is part of the point.</p>
+
+                <p>Evidence also has a lifetime. Tests that passed before another edit are evidence about the earlier code. Redpen checks whether repository or task inputs changed after verification; a saved receipt can become <code>CHECK NEEDED</code>. Otherwise, a report meant to reduce uncertainty could become another source of false confidence.</p>
+
+                <h2 id="this-doesnt-replace-ci-or-review">This doesn't replace CI or review</h2>
+
+                <p>CI can already run excellent tests, including regression tests. A team can build task-aware checks into CI too. Redpen doesn't make those things newly possible.</p>
+
+                <p>It packages a particular workflow: record what this task requires, retain the agent's claims, collect evidence independently, and show which claims that evidence supports. The same underlying commands can be useful in CI and in a local task receipt.</p>
+
+                <p>Review still covers things the checks don't: whether the solution is appropriate, whether the tests reflect the requirement, and whether the change creates a problem elsewhere. A receipt should help someone find the remaining questions, not persuade them to stop asking.</p>
+
+                <p>The v0.4 release also includes a local Codex plugin beta to bring this workflow into the coding session. Automatic final-message capture and checks require a trusted hook and an explicitly bound session. Installing the plugin alone doesn't authorize execution.</p>
+
+                <p>Removing a manual step is useful only if the evidence remains independent.</p>
+
+                <h2 id="a-better-handoff">A better handoff</h2>
+
+                <p>I don't want the future of agentic coding to be a developer watching a terminal all day, checking every action as it happens. Delegation should give us time back.</p>
+
+                <p>But I also don't want the handoff to be a large diff accompanied by a reassuring paragraph. The person receiving it should be able to see what was required, what changed, which checks ran, what their results support, and what still needs judgment.</p>
+
+                <p>Redpen is an early attempt to make that handoff less expensive. It doesn't understand arbitrary software requirements or prove general correctness. Its next useful steps should make more real requirements checkable, not make the word <code>DONE</code> easier to print.</p>
+
+                <p>The measure of success is not how often it returns a green result. It is whether the person reviewing the work can make a better decision with less reconstruction.</p>
+
+                <p>Coding agents can take on more of the implementation. We still own the decision to ship. Better evidence is what lets those two things coexist.</p>
+
+                <hr>
+
+                <p><em>Redpen v0.4 is <a href="https://github.com/ChiragArora31/Redpen">open source</a> and available as <code>redpen-cli</code> on npm. To try it, run <code>npm install -g redpen-cli</code>. The <a href="https://github.com/ChiragArora31/Redpen/blob/466df0f/scripts/demo-cases.mjs">five-case demo</a> uses real temporary Git repositories and simulated completion messages; its checks run independently.</em></p>
+            </div>
+
+            <footer class="essay-footer">
+                <p><a href="/writing">&larr; back to all writing</a></p>
+            </footer>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

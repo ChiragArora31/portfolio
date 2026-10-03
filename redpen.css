@@ -1,0 +1,87 @@
+/* Article-only refinements. Shared navigation and themes stay unchanged. */
+.redpen-essay .essay-page {
+    max-width: 728px;
+}
+
+.redpen-essay .essay-header {
+    padding-top: 0;
+    margin-bottom: 3rem;
+}
+
+.redpen-essay .essay-kicker {
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    margin-bottom: 1.75rem;
+}
+
+.redpen-essay .essay-header h1 {
+    max-width: none;
+    font-size: clamp(2.3rem, 6vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+}
+
+.redpen-essay .essay-dek {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.redpen-essay .essay-body {
+    font-size: 1rem;
+    line-height: 1.85;
+    overflow-wrap: break-word;
+}
+
+.redpen-essay .essay-body h2 {
+    margin-top: 3.25rem;
+    font-size: clamp(1.45rem, 3.8vw, 1.8rem);
+    font-weight: 650;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    scroll-margin-top: 7rem;
+}
+
+.redpen-essay .essay-body a {
+    text-decoration: underline;
+}
+
+.redpen-essay .essay-body blockquote {
+    color: var(--heading-color);
+    font-size: 1.2rem;
+    line-height: 1.65;
+}
+
+.redpen-essay pre {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    border-radius: 5px;
+    overflow-wrap: normal;
+}
+
+.redpen-essay pre:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 3px;
+}
+
+.redpen-essay .essay-body hr + p {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+@media (max-width: 720px) {
+    .redpen-essay .essay-page {
+        padding-inline: 1.25rem;
+    }
+
+    .redpen-essay .essay-meta {
+        gap: 0.4rem 0.5rem;
+        font-size: 0.72rem;
+    }
+
+    .redpen-essay .essay-dek {
+        font-size: 1.1rem;
+    }
+}
