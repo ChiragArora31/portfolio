@@ -1,0 +1,63 @@
+/* Quiet reading layout shared by new essays. */
+.reading-essay .essay-page {
+    max-width: 728px;
+}
+
+.reading-essay .essay-header {
+    padding-top: 0;
+    margin-bottom: 3rem;
+}
+
+.reading-essay .essay-kicker {
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    margin-bottom: 1.75rem;
+}
+
+.reading-essay .essay-header h1 {
+    max-width: none;
+    font-size: clamp(2.3rem, 6vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+}
+
+.reading-essay .essay-dek {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.reading-essay .essay-body {
+    font-size: 1rem;
+    line-height: 1.85;
+    overflow-wrap: break-word;
+}
+
+.reading-essay .essay-body h2 {
+    margin-top: 3.25rem;
+    font-size: clamp(1.45rem, 3.8vw, 1.8rem);
+    font-weight: 650;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    scroll-margin-top: 7rem;
+}
+
+.reading-essay .essay-body a {
+    text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+    .reading-essay .essay-page {
+        padding-inline: 1.25rem;
+    }
+
+    .reading-essay .essay-meta {
+        gap: 0.4rem 0.5rem;
+        font-size: 0.72rem;
+    }
+
+    .reading-essay .essay-dek {
+        font-size: 1.1rem;
+    }
+}

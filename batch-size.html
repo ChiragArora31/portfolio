@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coding agents make it easy to ask for more work at once. How much should happen before we learn whether we are going in the right direction?">
+    <meta name="author" content="Chirag Arora">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The batch size of software - Chirag Arora">
+    <meta property="og:description" content="When implementation gets cheaper, the size of the work we delegate becomes a design decision.">
+    <meta property="og:url" content="https://www.chiragarora.tech/batch-size">
+    <meta property="article:published_time" content="2026-10-26T00:00:00+05:30">
+    <meta property="article:author" content="Chirag Arora">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The batch size of software - Chirag Arora">
+    <meta name="twitter:description" content="When implementation gets cheaper, the size of the work we delegate becomes a design decision.">
+    <meta name="twitter:creator" content="@iChiragArora">
+
+    <link rel="canonical" href="https://www.chiragarora.tech/batch-size">
+    <title>The batch size of software - Chirag Arora</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="/favicon.png?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="essay.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The batch size of software",
+        "description": "When implementation gets cheaper, the size of the work we delegate becomes a design decision.",
+        "datePublished": "2026-10-26",
+        "dateModified": "2026-10-26",
+        "author": {
+            "@type": "Person",
+            "name": "Chirag Arora",
+            "url": "https://www.chiragarora.tech/"
+        },
+        "mainEntityOfPage": "https://www.chiragarora.tech/batch-size",
+        "inLanguage": "en"
+    }
+    </script>
+</head>
+<body class="reading-essay">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <progress class="scroll-progress" id="scrollProgress" max="100" value="0" aria-label="Reading progress"></progress>
+
+    <header class="site-header">
+        <nav class="nav" aria-label="Primary navigation">
+            <a href="/">home</a>
+            <a href="/#work">work</a>
+            <a href="/#open-source">open source</a>
+            <a href="/writing">writing</a>
+            <a href="/collection">collection</a>
+            <a href="/#contact">contact</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+                <span class="theme-label">theme</span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content" class="page essay-page">
+        <article>
+            <header class="essay-header">
+                <a class="essay-kicker" href="/writing">&larr; all writing</a>
+                <h1>The batch size of software</h1>
+                <p class="essay-dek">How much should happen before we find out whether we are going in the right direction?</p>
+                <div class="essay-meta">
+                    <span>Chirag Arora</span>
+                    <span aria-hidden="true">·</span>
+                    <time datetime="2026-10-26">oct 26, 2026</time>
+                    <span aria-hidden="true">·</span>
+                    <span>6 min read</span>
+                </div>
+            </header>
+
+            <div class="essay-body">
+                <p>There is a strange moment in working with a coding agent when you realize you can ask for much more.</p>
+
+                <p>You were going to ask for a function. You ask for the feature. Then the tests, the interface, the migration. The agent keeps going. Why interrupt it?</p>
+
+                <p>Suppose you ask it to add CSV exports to an application. It returns a download button, an endpoint, a background job, and a small storage abstraction. The tests pass. Then you try exporting a filtered table and discover that the file contains every row.</p>
+
+                <p>The agent understood “export” differently. That decision now lives in several places.</p>
+
+                <p>The mistake might have been cheap to discover after the first working request. By the time the feature looks finished, correcting it means finding everything that grew around it.</p>
+
+                <h2 id="what-is-in-a-batch">What is in a batch?</h2>
+
+                <p>Software has always been made in batches: releases, pull requests, commits. Agents introduce another choice: how much work to delegate before asking for evidence that the direction makes sense.</p>
+
+                <p>It is tempting to measure this in lines of code. But a thousand-line mechanical rename can be easier to judge than a ten-line change to who can see a customer's data.</p>
+
+                <p>I think the more useful batch size is the amount of work built on assumptions we haven't checked yet.</p>
+
+                <p>For the export feature, those assumptions include what “all rows” means, whose permissions apply, and whether the file should reflect the table as it looked when the user clicked. Once those are settled, the agent may have plenty of ordinary implementation work it can do independently.</p>
+
+                <p>This is why splitting a large diff into ten commits afterward doesn't necessarily make the work incremental. The opportunity to correct an early assumption has already passed. A checkpoint matters when its result can change what happens next.</p>
+
+                <p>The principle predates AI. A <a href="https://storage.googleapis.com/gweb-research2023-stg-media/pubtools/4476.pdf">2018 study of code review at Google</a> examined roughly nine million changes from 2014 to 2016. The median change modified 24 lines. Initial feedback took a median of under an hour for small changes, compared with about five hours for very large ones.</p>
+
+                <p>That is an observation about one engineering environment, not a prescription for 24-line pull requests. But it is a useful reminder that a large software organization can operate through very small changes.</p>
+
+                <h2 id="the-expensive-part-of-being-wrong">The expensive part of being wrong</h2>
+
+                <p>In <a href="https://x.com/karpathy/status/1915581920022585597">an April 2025 post</a>, Andrej Karpathy described a rhythm for AI-assisted coding. One instruction was: “Describe the next single, concrete incremental change we're trying to implement.” He followed it with choosing an approach, reviewing, testing, and committing.</p>
+
+                <p>The important word there is “next.” You are allowed to learn something before deciding what follows.</p>
+
+                <p>Consider two ways to divide the export feature. One is by layer: database work, then endpoint, then interface, then tests. Each task sounds small. Yet you might finish three of them before a user can tell you the export is wrong.</p>
+
+                <p>Another is to make one authorized request export the currently filtered rows, even if the button is ugly and large files are still unsupported. That crosses several layers, but answers an important question. You can then decide whether a background job is necessary at all.</p>
+
+                <p>A small batch should close a question. Merely finishing a file doesn't do that.</p>
+
+                <p>This gets more valuable when code is cheap to produce. An agent can make an uncertain decision look established very quickly. It can give it types, tests, documentation, and a pleasing interface. You then have to distinguish the work worth keeping from the work that faithfully implements the wrong idea.</p>
+
+                <p>Deleting generated code may be cheap. Discovering which assumptions it spread through the system can still be expensive.</p>
+
+                <p>There is a human cost too. Simon Willison <a href="https://bsky.app/profile/simonwillison.net/post/3meus4jrlqk2g">described losing a “firm mental model”</a> of his software as unreviewed AI-generated code accumulated. You can end up owning a working system while becoming less able to reason about its next change.</p>
+
+                <h2 id="a-long-leash-with-short-feedback">A long leash with short feedback</h2>
+
+                <p>None of this means an agent should ask permission after every function. Constant supervision has a cost. You have to stop thinking about one thing, reconstruct another, answer a question, and switch back. Enough interruptions make delegation pointless.</p>
+
+                <p>Long assignments and short feedback loops can coexist. An agent can run tests, inspect a browser, compare outputs, and correct itself without calling you over each time. The useful boundary is where it encounters a decision its available feedback cannot settle.</p>
+
+                <p>“Does this output preserve the filter?” may be testable. “Should this export include data the user cannot currently see?” needs a clear policy. A passing build cannot supply one.</p>
+
+                <p>Anthropic's <a href="https://www.anthropic.com/research/harness-design-long-running-apps">March 2026 experiments with long-running agents</a> make this trade-off unusually concrete. For one game-maker prompt, a solo run took about 20 minutes and cost $9; its fuller harness took about six hours and cost $200, with better output in the author's assessment. This was a demonstration, not a controlled estimate of the return on checkpoints.</p>
+
+                <p>Later, with a more capable model, the author removed the explicit sprint structure and moved evaluation to the end of the run. Some scaffolding had become unnecessary. The useful amount of supervision depended on the task and the model.</p>
+
+                <p>That seems like the right ambition for a software factory: let it carry out a large assignment, while giving it ways to discover errors before more work depends on them. Where feedback is strong, leave it alone. Where an assumption is both uncertain and consequential, arrange an earlier check.</p>
+
+                <h2 id="spend-the-speed-on-learning">Spend the speed on learning</h2>
+
+                <p>There is a less obvious possibility here. Agents can make small batches cheaper too.</p>
+
+                <p>Part of the reason to bundle work is the overhead of setting it up, writing tests, preparing a review, and explaining what changed. Agents can help with those chores. We don't have to spend every improvement in generation speed on a larger pile of code.</p>
+
+                <p><a href="https://dora.dev/capabilities/working-in-small-batches/">DORA's guidance on small batches</a> makes an important qualification: splitting development into pieces and then bundling them for testing or release still delays feedback. The same applies inside an agent session. Ten tasks completed before anything is exercised can amount to one large bet.</p>
+
+                <p>Before delegating a feature, I would ask: what could we learn early that would make the rest of this work unnecessary?</p>
+
+                <p>For a migration, it might be whether old and new readers agree on one awkward record. For retrieval, whether a handful of difficult queries return useful evidence. For a new interface, whether someone can complete the main action without an explanation. These checks won't settle everything. They can prevent a lot of polished work on a bad premise.</p>
+
+                <p>As those questions get answered, larger batches become reasonable. Repetitive work with clear rules deserves more freedom than unfamiliar work whose requirements are still moving.</p>
+
+                <p>The next time an agent offers to build the whole thing, it may be worth letting it. First, decide how it will find out that it is wrong.</p>
+
+                <p>Cheap implementation gives us a choice: build more before we learn, or learn more before we build.</p>
+            </div>
+
+            <footer class="essay-footer">
+                <p><a href="/writing">&larr; back to all writing</a></p>
+            </footer>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
